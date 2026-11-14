@@ -1,0 +1,13 @@
+admin
+email: admin@system.com
+password: admin123
+
+staff
+--none
+
+customer
+email: customer@example.com
+password: password123
+
+email: test@gmail.com
+password: Test123
