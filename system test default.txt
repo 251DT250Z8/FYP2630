@@ -3,7 +3,8 @@ email: admin@system.com
 password: admin123
 
 staff
---none
+email: staff@gmail.com
+password: staff123
 
 customer
 email: customer@example.com

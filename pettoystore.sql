@@ -28,8 +28,9 @@ create table admsta
   country varchar(50) not null default 'Malaysia'
 );
 
-insert into admsta (fname, lname, email, password, role, phone, address, city, zip, state, country) values
-('Store', 'Admin', 'admin@system.com', 'admin123', 'admin', null, null, '', '', '', 'Malaysia');
+insert into admsta (fname, lname, email, password, role) values
+('Store', 'Admin', 'admin@system.com', 'admin123', 'admin'),
+('Store', 'Staff', 'staff@gmail.com', 'staff123', 'staff');
 
 create table users
 (
@@ -48,6 +49,10 @@ create table users
   country varchar(50) not null default 'Malaysia',
   cart longtext default null
 );
+
+insert into users (fname, lname, email, password) values
+('Test', 'Customer', 'customer@example.com', 'password123'),
+('Tester', 'Cust', 'test@gmail.com', 'Test123');
 
 create table categories
 (
