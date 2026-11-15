@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - PetToy Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+        .product-count-pill { background: var(--primary-light); color: var(--primary-hover); font-weight: 700; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.9rem; }
+        .search-col { flex: 1; min-width: 240px; }
+        .filter-col { width: 240px; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <div class="catalog-header">
+                <div>
+                    <h1 style="margin-bottom: 0.25rem;">PetToy Store Catalog</h1>
+                    <p style="margin-bottom: 0; color: var(--text-muted);">Add toys directly to your synced account cart or view durability &amp; play guides.</p>
+                </div>
+                <span id="products-count" class="product-count-pill">Loading products...</span>
+            </div>
+
+            <div class="search-filter-bar">
+                <div class="search-filter-inputs">
+                    <div class="search-col">
+                        <input type="text" id="search-prod" class="modern-input" placeholder="🔍 Search pet toys by name or play style..." oninput="window.renderProducts()">
+                    </div>
+                    <div class="filter-col">
+                        <div class="cat-select-wrap">
+                            <span class="cat-select-icon">🏷️</span>
+                            <select id="filter-cat" class="modern-input cat-select-enhanced" onchange="window.renderProducts()"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="products-grid" class="grid-3"></div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+    <footer></footer>
+
+    <script src="../app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.initCustomerPage();
+            window.initProductsPage();
+        });
+    </script>
+</body>
+</html>

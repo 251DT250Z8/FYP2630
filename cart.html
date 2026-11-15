@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - PetToy Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+        .cart-banner-wrap { display: none; margin-bottom: 1.25rem; }
+        .cart-actions-row { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <div class="cart-header-row">
+                <div>
+                    <h1 style="margin-bottom: 0.25rem;">Your Shopping Cart</h1>
+                    <p style="margin-bottom: 0; color: var(--text-muted);">Synced with your PetToy Store account across devices.</p>
+                </div>
+                <a href="products.html" class="btn btn-outline">← Continue Shopping</a>
+            </div>
+
+            <div id="cart-delivery-banner" class="cart-banner-wrap"></div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-container"></tbody>
+                </table>
+            </div>
+
+            <div class="cart-summary-box">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <strong id="cart-subtotal">RM0.00</strong>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Nationwide Shipping</span>
+                    <span id="cart-shipping">RM0.00</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>SST (6%)</span>
+                    <span id="cart-tax">RM0.00</span>
+                </div>
+                <div class="cart-summary-row total">
+                    <span>Total Payable</span>
+                    <span id="cart-total">RM0.00</span>
+                </div>
+            </div>
+
+            <div class="cart-actions-row">
+                <a href="checkout.html" class="btn">Proceed to Checkout ➔</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+    <footer></footer>
+
+    <script src="../app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.initCustomerPage();
+            window.renderCart();
+        });
+    </script>
+</body>
+</html>

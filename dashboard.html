@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - PetToy Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dash-header-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-close-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            line-height: 1;
+        }
+
+        .modal-close-icon:hover {
+            color: var(--secondary);
+        }
+
+        .tracking-modal-card {
+            max-width: 620px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <div class="dash-header">
+                <div>
+                    <h1 style="margin-bottom: 0.25rem;">My PetToy Store Dashboard</h1>
+                    <p style="margin-bottom: 0; color: var(--text-muted);">Track your package delivery status, view
+                        courier tracking details, and print official receipts.</p>
+                </div>
+                <div class="dash-header-actions">
+                    <a href="profile.html" class="btn btn-outline">👤 My Profile</a>
+                    <a href="products.html" class="btn">🛒 Browse Pet Toys</a>
+                </div>
+            </div>
+
+            <h2 style="font-size: 1.25rem; margin-bottom: 1rem;">Recent Orders &amp; Delivery Tracking</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Delivery Details</th>
+                            <th>Total</th>
+                            <th>Status &amp; Tracking</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-orders-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="delivery-tracking-modal" class="modal-overlay">
+        <div class="modal-content tracking-modal-card">
+            <span class="modal-close-icon"
+                onclick="document.getElementById('delivery-tracking-modal').style.display='none'">&times;</span>
+            <h2 style="margin-bottom: 1rem;">Live Delivery Tracking</h2>
+            <div id="delivery-tracking-body"></div>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+    <footer></footer>
+
+    <script src="../app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.initCustomerPage();
+            window.initCustomerDashboard();
+
+            const modal = document.getElementById('delivery-tracking-modal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.style.display = 'none';
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modal.style.display === 'flex') {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

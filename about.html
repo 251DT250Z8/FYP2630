@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PetToy Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-intro { margin-bottom: 1.5rem; }
+        .about-section { margin-bottom: 2rem; }
+        .about-card { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+        .about-avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem auto; border: 3px solid var(--primary); display: block; }
+        .about-role { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main class="main-content">
+        <div class="page-section about-section">
+            <h1>About PetToy Store</h1>
+            <p class="about-intro">Founded in 2026 in Malaysia, PetToy Store specializes in safe, mentally stimulating, and long-lasting toys for dogs, cats, and small pets. Our mission is to make playtime healthier, happier, and easier for every pet parent.</p>
+
+            <h2>Our Core Promises</h2>
+            <div class="grid-3 mt-1">
+                <div class="trust-box">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Non-Toxic Quality</h3>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0;">Food-grade silicone, tough natural rubber, and reinforced seams built for joyful indoor and outdoor play.</p>
+                </div>
+                <div class="trust-box">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Mental Enrichment</h3>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0;">Curated puzzle feeders, foraging mats, and chase wands that prevent boredom and nurture healthy pet habits.</p>
+                </div>
+                <div class="trust-box">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Tracked Delivery</h3>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0;">Dispatched from Melaka with full J&amp;T Express courier tracking right inside your Customer Dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section">
+            <h2>Meet the PetToy Store Team</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Dedicated specialists who carefully test durability, manage logistics, and support fellow pet owners.</p>
+            <div class="grid-3">
+                <div class="about-card">
+                    <img src="../img/profile/Lim_Ka_Sing.png" alt="Lim Ka Sing" class="about-avatar" onerror="window.handleImageError(this)">
+                    <h3 style="margin-bottom: 0.25rem;">Lim Ka Sing</h3>
+                    <div class="about-role">Founder &amp; Toy Specialist</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Curates heavy-chew rubber lines, ergonomic teething gear, and enrichment puzzles for pets of all sizes.</p>
+                </div>
+                <div class="about-card">
+                    <img src="../img/profile/Shaun_Lim_Yuanzhe.jpeg" alt="Shaun Lim Yuanzhe" class="about-avatar" onerror="window.handleImageError(this)">
+                    <h3 style="margin-bottom: 0.25rem;">Shaun Lim Yuanzhe</h3>
+                    <div class="about-role">Operations &amp; Quality Lead</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Oversees warehouse stock accuracy, quality checks, and rapid nationwide dispatch for every customer order.</p>
+                </div>
+                <div class="about-card">
+                    <img src="../img/profile/Javier_De_Costa.jpeg" alt="Javier De Costa" class="about-avatar" onerror="window.handleImageError(this)">
+                    <h3 style="margin-bottom: 0.25rem;">Javier De Costa</h3>
+                    <div class="about-role">Pet Play &amp; Customer Lead</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Helps pet parents match toys to breed energy levels and answers product care questions every day.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+    <footer></footer>
+
+    <script src="../app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.initCustomerPage();
+        });
+    </script>
+</body>
+</html>
